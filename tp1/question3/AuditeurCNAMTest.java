@@ -122,4 +122,22 @@ public class AuditeurCNAMTest extends junit.framework.TestCase {
         assertEquals(" nom avec accent (é devient e) ? ", "chloe_c",
             auditeur1.login());
     }
+
+    
+
+    public void testMyTest()
+    {
+        question3.AuditeurCNAM auditeur1 = new question3.AuditeurCNAM("el-mir", "Lina", "123456");
+        assertEquals("el_mir_l", auditeur1.login());
+        assertEquals("el-mir", auditeur1.nom());
+        
+        question3.AuditeurCNAM auditeur2 = new question3.AuditeurCNAM("al ali", "Monir", "12345");
+        assertEquals("al_ali_m", auditeur2.login());
+        assertEquals("Monir", auditeur2.prenom());
+        
+        question3.AuditeurCNAM auditeur3 = new question3.AuditeurCNAM("An", "élsa", "123");
+        assertEquals("an_e", auditeur3.login());
+    }
 }
+
+

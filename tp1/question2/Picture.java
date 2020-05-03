@@ -1,5 +1,7 @@
 package question2;
 
+//package question2;
+
 import question1.Circle;
 import question1.Square;
 import question1.Triangle;
@@ -20,12 +22,15 @@ public class Picture {
     private Square window;
     private Triangle roof;
     private Circle sun;
+    private Circle newSun;
+    private boolean terreFixe;
 
     /**
      * Constructor for objects of class Picture
      */
     public Picture() {
         // nothing to do... instance variables are automatically set to null
+        terreFixe =true;
     }
 
     /**
@@ -50,11 +55,18 @@ public class Picture {
         roof.makeVisible();
 
         sun = new Circle();
-        sun.changeColor("yellow");
+        sun.changeColor("blue");
         sun.moveHorizontal(180);
         sun.moveVertical(-10);
         sun.changeSize(60);
         sun.makeVisible();
+        
+        newSun = new Circle();
+        newSun.changeColor("yellow");
+        newSun.moveHorizontal(18);
+        newSun.moveVertical(-25);
+        newSun.changeSize(60);
+        newSun.makeVisible();
     }
 
     /**
@@ -67,6 +79,7 @@ public class Picture {
             window.changeColor("white");
             roof.changeColor("black");
             sun.changeColor("black");
+            newSun.changeColor("black");
         }
     }
 
@@ -80,6 +93,18 @@ public class Picture {
             window.changeColor("black");
             roof.changeColor("green");
             sun.changeColor("yellow");
+            newSun.changeColor("blue");
+        }
+    }
+    
+    /**
+     * bet5ali solei l bleu se couche
+     */
+    
+    public void seCoucher(){
+        if(terreFixe==true)
+        {
+            sun.slowMoveVertical(250);
         }
     }
 
